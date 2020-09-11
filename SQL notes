@@ -113,3 +113,13 @@ To display all the rows of the table:-
         SELECT * FROM students;
         
         
+
+SQL statements are made up of statements which have the following stuff:-
+    Keywords:-
+        SQL standard words used to constructthe SQL statements. Some Keywords are optional while some are mandatory.
+    Identifiers:-
+        The names we give to our databse, table or columns are known as Identifiers.
+    Constants:-
+        Constants are the literal or fixed values we give to our tables.
+    Clauses:-
+        Portion of an SQL statement. Clause name correspond to the SQL keyword.
