@@ -1,0 +1,115 @@
+SQL notes:-
+
+
+To create a user:-
+    Syntax:-
+        CREATE USER 'username' IDENTIFIED BY 'password';
+    Example:-
+        CREATE USER 'admin' IDENTIFIED BY 'Kingakash@1';
+
+        
+To change the password of the user:-
+    Syntax:-
+        ALTER USER 'username' IDENTIFIED BY 'new password';
+    Example:-
+        ALTER USER 'admin' IDENTIFIED BY 'Password@1';
+        
+        
+To Grant permissions to the user:-
+    Syntax:-
+        GRANT ALL ON *.* TO 'username' WITH GRANT OPTION;
+    Example:-
+        GRANT ALL ON *.* TO 'admin' WITH GRANT OPTION;
+
+        
+        
+After granting privileges or creating new users you have to type a command which will make that changes permanantly.
+    FLUSH PRIVILEGES;
+    
+    
+    
+To show all the databases:-
+    Syntax:-
+        SHOW DATABASES;
+    
+    
+To create a new database:
+    Syntax:-
+        CREATE DATABASE database_name;
+    Example:-
+        CREATE DATABASE school;
+    
+    
+To use a database:-
+    Syntax:-
+        USE database_name;
+    Example:-
+        USE dk;
+    
+    
+To delete a database:-
+    Syntax:-
+        DROP database_name;
+    Example:-
+        DROP dk;
+        
+        
+    
+To show all the tables in the databse:-
+    Syntax:-
+        SHOW TABLES;
+    
+    
+To display the structure of the table;
+    Syntax:-
+        DESCRIBE table_name;
+    Example:-
+        DESCRIBE students;
+        
+        
+To create a new table:-
+    Syntax:-
+        CREATE TABLE table_name(parameters like column type etc);
+    Example:-
+        CREATE TABLE students(id INT NOT NULL PRIMARY KEY, name VARCHAR(40) NOT NULL, CLASS VARCHAR(20), age INT);
+        
+        
+To delete a TABLE:-
+    Syntax:-
+        DROP TABLE table_name;
+    Example:-
+        DROP TABLE students;
+        
+        
+To add the values or the data into the database tables:-
+    Syntax:-
+        INSERT INTO table_name VALUES(Value 1, Value 2, Value 3.............);
+    Example:-
+        INSERT INTO students VALUES(12, 'Akshay', 'Third Year', 18);
+        
+        
+Another way to add values or data into the database tables:-
+    Syntax:-
+        INSERT INTO table_name (column1, column2, column3.......) VALUES (Value1, Value2, Value3..........);
+    Example:-
+        INSERT INTO students (id, name, class, age) VALUES (37, 'Akash', 'TYIT', 19);
+        
+To insert multiple rows in the table:-
+    Syntax:-
+        SAME AS HOW TO ADD THE ROWS BUT THE ONLY CHANGE WE HAVE TO MAKE IS ADD THE (',') OPERATOR IN BETWEEN THEM.
+        
+        
+**difference between the first and the second method of adding values to the tables**
+    In first method we have to specify all the values for the columns and we cannot add the random values means that we cnanot add the values in random manner, we have to write the values in sequential way.
+    In second method we do not have to specify all the values and we can add the values randomly. This is way efficient as we can add the values which we want and skip the values which we don't want for now.
+    
+    
+    
+
+To display all the rows of the table:-
+    Syntax:-
+        SELECT * FROM table_name;
+    Example:-
+        SELECT * FROM students;
+        
+        
