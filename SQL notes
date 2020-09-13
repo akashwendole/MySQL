@@ -123,3 +123,135 @@ SQL statements are made up of statements which have the following stuff:-
         Constants are the literal or fixed values we give to our tables.
     Clauses:-
         Portion of an SQL statement. Clause name correspond to the SQL keyword.
+        
+SQL is not a case senseative language, means that "SELECT" or "select" are both the same.
+
+
+
+DDL and DML:-
+    DDL ( Data Defination Language):-
+        It is used to manage database objects like tables and columns.
+        It changes the structure of the database.
+        Objects like tables and columns are created, modified or removed.
+        Examples of DDL (Data Defination Language) are:-
+            CREATE, ALTER, DROP
+            
+    
+    DML (Data Manipulation Language):-
+        It is used to manage the data which is inside are tables and columns.
+        It only changes the data.
+        The data inside the table is inserted, updated or deleted from the table.
+        Examples of DDL (Data Manipulation Language) are:-
+            INSERT, UPDATE, DELETE
+
+            
+            
+* symbol is used for selecting all the available data present in the table.
+
+
+
+SELECT STATEMENT:-
+    SELECT statement is used to display the data of the table.
+    There are two ways SELECT statement can be used:-
+        1. displaying all the data present:-
+            Syntax:- 
+                SELECT * FROM table_name;
+        2. Displaying specified rows:-
+            Syntax:-
+                SELECT column1, column2..... FROM table_name;
+                
+SELECT DISTINCT statement:-
+    SELECT DISTINCT statement is used when there are multiple duplicate values like names class etc and we only want one instinct of that duplicate values.
+    Syntax:-
+        SELECT DISTINCT column1, column2 ..... FROM table_name;
+    
+    
+WHERE statement:-
+    WHERE statementor keyword is used to search the specified data in the table.
+    Syntax:-
+        SELECT * FROM table_name WHERE condition;           (condition => column_name = value)
+    Example:-
+        SELECT * FROM students WHERE name = John; 
+    This is also a WHERE TURE statement.
+    
+
+WHERE FALSE statement:-
+    WHERE NOT statement or keyword is used to search the data which is other than the specified data.
+    Syntax:-
+        SELECT * FROM students WHERE NOT condition;
+    Other type of WHERE FALSE statement is:-
+    Syntax:-
+        SELECT * FROM students WHERE column_name <> value;          (<> => this is special symbol for WHERE NOT)
+        
+        
+        
+AND clause:-
+    AND clause is used to check more than one condition.
+    The keyword for AND operator is 'AND' or '&&' 
+    AND operator will only show those values in which all the conditions are TRUE.
+    Syntax:-
+        SELECT * FROM students WHERE condition1 AND condition2;
+        SELECT * FROM students WHERE condition1 && condition2;
+        SELECT * FROM students WHERE (condition1 AND condition2);
+        SELECT * FROM students WHERE (condition1 && condition2);
+        
+        
+        
+OPERATOR in MySQL:-
+    AND = All the conditions need to be satisfied. (Keywords = AND , &&)
+    OR  = Atleast one condition need to be satisfied. ( Keywords = OR , ||)
+    IN  = It is used to check for the multiple values in a column. ( keyword = IN) Example:- SELECT * FROM students WHERE column IN(value1, value2,value3....);
+    
+    
+    
+EXIST :-
+    Exist clause is used to check the condition of other table which has the same value.
+    This is mainly used to compare two or more tables.
+    Syntax:-
+        SELECT * FROM table_name1 WHERE EXIST ( SELECT * FROM table_name2 WHERE table_name1.condition = table_name2.condition);
+    Example:-
+        SELECT * FROM students WHERE EXIST ( SELECT * FROM marks WHERE students.rollno = marks.rollno AND qualification = 'pass');
+    
+    
+
+        
+
+NOT keyword can be used in EXIST or IN statements to revert the meaning of that statement.
+
+
+
+Comparison operators:-
+    =                   => equal to.
+    <> or !=            => not equal to 
+    <                   => less than
+    >                   => greater than 
+    <=                  => less than equal to
+    >=                  => greater than equal to
+    
+    
+    
+LIKE clause:-
+    It is used when we know a certain value but we don't know the exact value.
+    For example, there are names in a database and we only know first two characters of that name so we can use LIKE operator in that and the missing words or values can be detemined by wildcard i.e. '%'.
+    Syntax:-
+        SELECT * FROM students WHERE column LIKE 'ak%';
+        
+        
+        
+BETWEEN clause:-
+    BETWEEN clause is used to view the values which are between the two specified values.
+    Syntax:-
+        SELECT * FROM table_name WHERE column BETWEEN value1 AND value2;
+        
+        
+        
+Concatination:-
+    Concatination in MySQL is done using CONCAT keyword. This helps us to merge two or more than two strings in the table.
+    Syntax:-
+        SELECT CONCAT(column1, ' ' , column2) AS combined_column_name FROM table_name;
+    Example:-
+        SELECT CONCAT(firstname, ' ' , lastname) AS fullname FROM students;
+
+        
+        
+**Need to study temporal operator.**
